@@ -1,0 +1,147 @@
+CSS DISPLAY PROPERTY
+
+The display property is used to control how an element appears on a webpage.
+
+Syntax:
+
+display: block;
+display: inline;
+display: inline-block;
+display: none;
+
+========================================
+
+1. DISPLAY: BLOCK
+
+A block element always starts on a new line and takes the full width available.
+
+Examples:
+- div
+- p
+- h1 to h6
+
+Properties:
+✔ Starts on a new line
+✔ Takes full width
+✔ Width and height work
+✔ Margin and Padding
+
+Example:
+
+div{
+    display:block;
+}
+
+Output:
+
+HTML
+CSS
+JavaScript
+
+Real Life Example:
+A person sitting on a separate bench.
+
+========================================
+
+2. DISPLAY: INLINE
+
+An inline element stays in the same line and only takes the space it needs.
+
+Examples:
+- span
+- a
+- strong
+
+Properties:
+✔ Stays in same line
+✔ Takes content width only
+✔ Margin left & right & Padding
+✘ Width does not work
+✘ Height does not work
+✘ Margin top & left
+
+Example:
+
+span{
+    display:inline;
+}
+
+Output:
+
+HTML CSS JavaScript
+
+Real Life Example:
+People sitting side by side on the same bench.
+
+========================================
+
+3. DISPLAY: INLINE-BLOCK
+
+Inline-block is a combination of inline and block.
+
+Properties:
+✔ Stays in same line
+✔ Width works
+✔ Height works
+✔ Margin and padding work
+
+Example:
+
+div{
+    display:inline-block;
+    width:100px;
+    height:100px;
+}
+
+Output:
+
+[HTML] [CSS] [JS]
+
+Real Life Example:
+Shops in a market standing side by side with fixed width and height.
+
+========================================
+
+4. DISPLAY: NONE
+
+The element is completely removed from the webpage.
+
+Properties:
+✔ Element is hidden
+✔ No space is reserved for it
+
+Example:
+
+div{
+    display:none;
+}
+
+Output:
+
+Element will not be visible.
+
+Real Life Example:
+A chair removed from a room. Nobody can see it and it takes no space.
+
+========================================
+
+SUMMARY
+
+block
+- New line: Yes
+- Width works: Yes
+- Height works: Yes
+
+inline
+- New line: No
+- Width works: No
+- Height works: No
+
+inline-block
+- New line: No
+- Width works: Yes
+- Height works: Yes
+
+none
+- Hidden: Yes
+- Takes space: No
