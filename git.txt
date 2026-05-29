@@ -1,0 +1,271 @@
+prince271004@gmail.com
+
+Git & GitHub :
+Git and GitHub are not the same thing they are connected but completely different.
+Git = coffee
+GitHub = coffee shop where coffee served.
+
+
+What is git ?
+Git is a powerful tool that constantly keeps track of every change you make to your files.
+
+24*7: 
+What changed?
+When changed?
+Who changed?
+Where changed?
+
+What kind of files we are talking about ?
+Almost any kind JS, PHP, etc., which line wad edited when it was done and by whom
+
+Git saves different version of the file .If you make changes in the existing version new version is made and you doesn't want to lost the older version then git come to rescue .It lets you multiple version of your file effortlessly & you can rollback to any previous version in just a moment.
+Git is most commonly used to coding project, we can use git to keep track of changes of and maintain different version of any file.
+This is means you don't have to worry about loosing file.
+
+
+Real life example : Let's suppose you are working on a project you have spent hours on writing code client loves it and everything is going great and later client ask for update but after few days client said older version was better, now you are in trouble you have overridden the code now hot to get in back we can use git that's why git is known as VCS
+
+It was developed by "Linus Torvalds"
+
+Difference between Git and GitHub?
+Git : It is a tool that runs locally on your computer, It tracks all the changes you make to your file and keeps everything organized.
+
+
+Imagine you and your teammate are working on a same project you are working on your own computer and your teammate is working on another PC that means you both have the different version of the same project and if you team has more members there will be more version each save separately version on there own machine that's exactly where GitHub comes in when the project is completed you will combine everyone's work at single place to merge all those changes together for that you need central 
+Everyone can see, edit and share update at single place.
+
+Git is majorly divided into two parts:
+1. Local: Refers to your own computer, where you do all your work, this is where your file, code every change you made is stored.
+2. Remote: It lives in cloud, push or upload your local work. 
+
+How local part works?
+1. In your computer the folder where you working on your project is known as working directory, this is where all the actions happened 
+->you write code.
+->create new files.
+->modify existing ones.
+when you feel alright this version looks good, then you save the changes.
+Now we move our work to stage
+2. Stage: When we finish our work at working directory & changes can move to next step. It is the second phase of git workflow.
+3. Local Repository: In 3rd phase we take the staged file and send it to local repository
+*You can think of the local repo as the temporary area where files sit between working directory and final repository save.
+In commit permanently save changes to our local repository.
+
+What is repository?
+A repository is a place where all the versions of your files and their complete change history are stored.
+In case of local repo you have a specific folder
+for remote we have GitHub
+Nothing has been sent to cloud yet.We upload to cloud only when we want to share the code with others, access it from another computer, and keep it safely backed up.
+Then we push our local repo to remote repo in other words we upload to GitHub.
+
+
+Now make folder name git-demo
+inside it make one.txt, two.txt and new folder inside it make three.txt then do 
+git init it will Initialized the git repo
+.git hidden folder will be created will responsible for tracking changes.
+
+Now make a remote repo using GitHub and inside that make 2 files and clone that repo to system.
+
+git status: Tells user abt file whether it is untracked, modified or not
+"What changes have been made in our working directory"
+
+The process of moving changes form working directory to the staging area is known as adding
+we have command:
+
+git add filename {particular file added}
+git add * {All files added}
+
+
+I want to go back to my previous state, i.e. remove everything from stagging area and comes back to working directory.
+
+git reset
+then, 
+git status : you will notice everything as earlier
+
+git add --all    Stage every single change 
+git add -A      across the entire project
+
+git add .       Stage the changes within the 
+                current directory you're in.
+
+
+
+git add *        Stage only new or modified file
+                 not deleted ones
+
+git add one.txt  Stage only one file
+
+git add *.txt  Stage all .txt files except
+               deleted files
+
+
+SAVE CHANGES FROM STAGING TO LOCAL
+
+git commit -m "I hv made some commit"
+
+warning:
+	Please tell me who you are
+
+Run: 
+git config --global user.email "your@example.com"
+git config --global user.name "Your Name"
+
+Verify config:
+	git config --list
+
+If you want to config locally
+git config --local user.email "your@example.com"
+
+You can rollback prev state if needed
+	git reset HEAD~
+	then,
+	git status
+
+Instead of deleting the file and doing git add .
+we can simple write git rm four.txt
+this will delete the file and move to stage part   
+
+Normal "git reset" only bring back the changes not the file
+
+If you want to restore everything changes and the deleted files
+git reset --hard
+
+forcefully deleted git rm -f four.txt
+git rm --cached four.txt 
+
+--force Completely deleted the file
+--cached Only remote it from staging
+
+if you want to remove folder and inside its file
+use 
+git rm -r <folder>    here r means recursive
+                      it will remove file recursively
+
+if we forgot to put -r it will only delete the folder name
+
+
+VIEW COMMIT
+
+git log - to see all the commit
+git log --oneline short form commit 
+
+
+Branching: Instead of making changes directly in the main branch we create a separate branch where we commit all the changes once everything is stable we merge to our main branch 
+This ensure you main project is stayed safe
+
+*Branching in git provide a secure and organized intermediate step that allows you to review, test & manage changes before merging to main code.
+
+Merging: Combining the changes from two branches into one
+In git we can create multiple branches work on each of them separately after everything is final we can merge all of them
+
+To see branch name:
+git branch 
+
+Create a new branch
+git branch development
+
+When we create the new branch it takes the exact state of branch we are on.
+
+switch: git checkout development
+
+
+git merge main -m "Merging main into development"
+git merge development -m "Merging development into main"
+
+
+
+Merge Conflicts: It happens when the same part of the same file has been changed differently in two branches
+
+for ex. if you update one.txt in main branch 
+and some other update one.txt in other branch 
+
+git won't know which version to keep in such cases
+it flag the file as conflict and we resolve manually which changes to keep 
+
+Move from one version to other
+git log
+or git log --oneline
+
+then do git checkout Commit_id
+
+
+How to compare one commit with other?
+
+If you want to see the differences between the current commit and prev commit what lines of code +Added and what line of code -deleted
+
+git diff recentID prevID
+
+When you send the local changes to remote repo then it is known as push
+
+if any changes hv been made in the remote repo that we want to bring it to local repo we use fetch 
+
+when we run git fetch the remote changes are downloaded to the local repo memory
+
+But they won't appeared to the local repo yet to actually update the working directory see those changes in your file you need to run git pull
+
+
+push: Sending local changes to the remote
+
+fetch: Bringing remote changes into your local repo
+       but not merging them yet
+
+pull: Fetching plus merging-so your working directory
+      immediately reflects the remote changes
+
+
+i.e pull = fetch + merge
+push to main branch: git push origin main 
+git push origin staging
+
+
+Make directly change on GitHub
+we do: git fetch 
+       git merge
+or, 
+       git pull
+
+
+git restore - helps revert any files back to prev state
+to last commit
+
+entire dir
+git restore repo_name
+git restore .
+
+
+the diff between git reset and git revert is reset take you back to the specific commit and discard all commit after that point without creating new commit
+ 
+
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/dev-shrey/git-demo.git
+git push -u origin main
+
+
+git remote add origin https://github.com/dev-shrey/git-demo.git
+git branch -M main
+git push -u origin main
+
+
+git stash: working on a new branch but is not ready to cmmited and you have to check other 
+developer said to check the update and give the feedback 
+Basically, 
+It temporarily set aside your unfinished work, switch to another branch to do something
+
+1. make changes in main file
+2. switch 
+	get an error
+3. git stash
+4. git branch development
+
+change to main 
+5. git stash pop
+
+
+
+
+
+
+  
+ 

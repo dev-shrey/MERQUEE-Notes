@@ -1,0 +1,130 @@
+What is CSS ?
+CSS stands for cascading style sheets
+Cascading- How to style an element when several
+	   rules apply.
+
+Style- The various styles that can be applied to
+        HTML elements.
+
+Sheets- Their own documents which can be linked to
+	HTML files.
+
+So what does CSS do ?
+It is used to control the presentation and layout of HTML.
+We hv looked HTML already which is all about content.
+CSS is all about visual styling of the content.
+
+
+What is CSS box model?
+CSS views every HTML element as if it has an invisible box around it.
+All HTML elements are by default either a block or inline element.
+
+Block elements- Starts on a new line, Takes up full width of a page.
+e.g. <h1>, <p>, <ul>, <li>
+
+Inline elements-Does not start on a new line, unless after a block element. Only occupies width of their content.
+e.g. <a>, <img>, <span>, <br>, <input>
+
+*knowing whether an HTML element is a block or inline element is crucial. As it significantly influences css styling and layout.
+
+If anchor <a> tag is inline then why it is taking full width? Cuz it is inside the <li> tag which is block element taking whole width.
+
+CSS PROPERTIES:
+
+1.Content (Inside the box) - It includes font(family, styling, color, size, background-color)
+
+2.Box (Style box properties) - Width & Height, Border & Margin
+
+3.Layout (Where boxes go)-
+->Flexbox: Which allows us to place elements in 1 dimension along row and column.
+
+->Grid: Which allows us to place elements in 2 dimension, in rows and columns.
+
+->Position: Which allows us to specify the precise location of elements.
+
+CSS Rules:
+> Selector- It selects the HTML we want to target to apply styling 
+The simple selector is element selector where we just reference the element we want to select and style.
+
+Syntax-
+
+selector{
+	property: value;
+}
+
+The combination of a property and its value is called a declaration. Multiple declaration inside the curly braces is called a declaration block.
+And the whole setup is called the CSS rules for that particular selector.
+
+* Mastering CSS theory is key to understanding why elements are styled the way they are
+
+*Getting layouts to look how you intent across all device can be challenging.
+
+METHODS FOR INCLUDING CSS
+
+1.Inline CSS (Not recommended): Styling directly to individual HTML elements.
+e.g. <h1 style="color: blue"> Welcome to Earth </h1>
+styles must to be duplicated for each element
+
+2.Internal CSS (Not recommended): Styling a single HTML document using the style element.
+The problem is styles have to be duplicated for each page. Most project hv many HTML files so you need to replicated the CSS rule for the H1 hundred times.
+same issue where we have to create rules many times
+
+3.External CSS (Best Practice): Styles are in a separate CSS file and linked to the HTML documents.
+Styles are centrally managed from one file.
+Inside the head tags of the HTML file, we add a self closing tag called <link>
+The link has two attribute
+* rel- which defines the role of the linked resource.
+others value that can be used for rel for e.g. the value of icon is used as a favicon
+
+*href- The purpose of the href attribute is to reference the location of the CSS file which will be somewhere inside our working directory. So we will be using a relative URL path.
+
+CSS TEXT:
+Text Styling
+font-weight: see the thickness of text characters, we can use normal or bold instead we can use numerical values range from 100-900
+400- Default for most text (normal)
+500- Medium
+700- Default for headings(Bold)
+Font weight guide: Heading should be 500-900 and other text 300-400
+
+text-decoration: sets decorative lines on text
+text-decoration: line value color value style value
+
+line-value includes-
+.line-through
+.underline - default for anchor element
+.overline
+.none - default for most element
+
+color-value includes-
+.named
+.hex
+.rgb
+
+style-value includes-
+.double
+.dotted
+.wavy
+.solid
+.dashed
+
+*always remove underline from <a> tag
+
+font-style: sets the style of a font.
+values are- normal italic oblique oblique 10deg
+
+What is the difference between italic and oblique?
+italic is a purpose built font whereas a oblique takes the regular font and just slant it to right it's not the purpose built font
+
+*font style can be used to draw attention.
+
+text-transform: sets the capitalization of the text.
+
+list-style: sets the style of a list
+
+values- none disc(default for ul) circle square decimal(default for ol)
+
+*always set list style to none when they are used for structural purpose
+
+
+Text-align: Specifies the horizontal alignment of text within an element.
+text-align: center;
