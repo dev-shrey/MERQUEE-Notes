@@ -1,0 +1,187 @@
+CSS POSITION PROPERTY
+
+The position property is used to control where an element appears on the webpage.
+
+Syntax:
+
+position: static;
+position: relative;
+position: absolute;
+position: fixed;
+position: sticky;
+
+========================================
+
+1. POSITION: STATIC
+
+This is the default position of every element.
+
+Properties:
+✔ Elements appear in normal document flow
+✘ top, right, bottom, left do not work
+
+Example:
+
+.box{
+    position: static;
+    top: 50px;
+}
+
+Output:
+The element will not move.
+
+Real Life Example:
+A student sitting at their assigned seat in class.
+
+========================================
+
+2. POSITION: RELATIVE
+
+The element keeps its original space but can move from its original position.
+
+Properties:
+✔ Original space is reserved
+✔ top, right, bottom, left work
+
+Example:
+
+.box{
+    position: relative;
+    top: 20px;
+    left: 30px;
+}
+
+Output:
+The box moves 20px down and 30px right.
+Its original space remains empty.
+
+Real Life Example:
+A person takes a few steps from their seat, but their seat is still reserved.
+
+========================================
+
+3. POSITION: ABSOLUTE
+
+The element is removed from normal flow and positioned relative to its nearest positioned parent.
+
+Properties:
+✔ Original space is removed
+✔ Moves according to parent
+✔ Uses top, right, bottom, left
+
+Example:
+
+.parent{
+    position: relative;
+}
+
+.child{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+Output:
+The child moves inside the parent.
+
+Real Life Example:
+A photo stuck on a wall at a specific location.
+
+IMPORTANT:
+
+If parent has:
+
+position: relative;
+
+then child with:
+
+position: absolute;
+
+will move relative to that parent.
+
+========================================
+
+4. POSITION: FIXED
+
+The element stays fixed on the screen even when the page scrolls.
+
+Properties:
+✔ Removed from normal flow
+✔ Always visible at same screen position
+
+Example:
+
+.box{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+Output:
+The box stays at bottom-right even while scrolling.
+
+Real Life Example:
+A WhatsApp chat button that remains visible on every scroll.
+
+========================================
+
+5. POSITION: STICKY
+
+The element behaves like relative until a scroll point is reached.
+Then it behaves like fixed.
+
+Properties:
+✔ Scrolls normally at first
+✔ Becomes fixed after reaching a position
+
+Example:
+
+.navbar{
+    position: sticky;
+    top: 0;
+}
+
+Output:
+Navbar scrolls normally.
+When it reaches the top, it sticks there.
+
+Real Life Example:
+A page heading in a notebook.
+As you flip pages, the heading remains visible at the top.
+
+========================================
+
+SUMMARY
+
+STATIC
+- Default position
+- top/left do not work
+- Space reserved: Yes
+
+RELATIVE
+- Moves from original position
+- Space reserved: Yes
+
+ABSOLUTE
+- Positioned relative to nearest positioned parent
+- Space reserved: No
+
+FIXED
+- Fixed to screen
+- Moves on scroll: No
+- Space reserved: No
+
+STICKY
+- Relative + Fixed
+- Sticks after scrolling
+- Commonly used for navbar
+
+========================================
+
+MEMORY TRICK
+
+Static  = Normal
+Relative = Move from original place
+Absolute = Move inside parent
+Fixed = Fixed on screen
+Sticky = Stick while scrolling
